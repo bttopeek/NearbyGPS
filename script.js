@@ -38,7 +38,7 @@ function limpiarResultados() {
 
 function agregarResultadoALista(place, marker) {
   const li = document.createElement("li");
-  li.innerHTML = `<strong>${place.name}</strong><br>${place.vicinity || place.formatted_address || "Sin dirección disponible"}`;
+  li.innerHTML = <strong>${place.name}</strong><br>${place.vicinity || place.formatted_address || "Sin dirección disponible"};
 
   li.addEventListener("click", () => {
     map.setCenter(marker.getPosition());
@@ -125,7 +125,7 @@ function centrarEnMiUbicacion() {
   }
 
   map.setCenter(userLocation);
-  map.setZoom(14);
+  map.setZoom(10);
 
   // Buscar el marcador azul
   const marcadorAzul = markers.find(m => m.getTitle() === "Tu ubicación");
