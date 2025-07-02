@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Localizador de Servicios Cercanos</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/854/854878.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd7pFkelXRLOmP9sYdbCghG0p9qWsrhrI&libraries=places"></script>
+</head>
+<body>
+  <header>
+    <h1>Encuentra Servicios Cercanos</h1>
+
+    <div class="filtros">
+      <label for="service-type">Filtrar por tipo:</label>
+      <select id="service-type">
+        <option value="pharmacy">Farmacias</option>
+        <option value="atm">Cajeros automáticos</option>
+        <option value="hospital">Hospitales</option>
+        <option value="restaurant">Restaurantes</option>
+        <option value="gas_station">Gasolineras</option>
+      </select>
+      <button onclick="buscarServicios()">Buscar</button>
+    </div>
+
+    <div class="busqueda-texto">
+      <label for="text-search">O escribe el nombre del lugar:</label>
+      <input type="text" id="text-search" placeholder="Ej: Clínica San Rafael">
+      <button onclick="buscarPorTexto()">Buscar por nombre</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="map"></div>
+    <button id="btn-centro" onclick="centrarEnMiUbicacion()">📍 Mi ubicación</button>
+    <aside>
+      <h2>Resultados:</h2>
+      <ul id="results-list"></ul>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
